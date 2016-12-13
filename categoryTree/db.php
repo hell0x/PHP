@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 class db{
 	private static $_instance;
 	private static $_conn;
