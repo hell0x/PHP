@@ -30,18 +30,18 @@ function categoryAdd($id, $category){
 function categoryDel($id){
     $conn = db::getInstance()->connect();
     $res = $conn-> query("select count(*) from category where pid=".$id."");
-while($r=$res->fetch_array()){
-    if($r[0]>0){
-        echo "<script>alert('请先删除此分类中的子类');history.back(-1)</script>";
-        exit;
-    }
-    else{
-        $r=$conn->query("delete from category where id=".$id."");
-        if($r){
-        echo "<script>alert('删除分类成功');history.back(-1)</script>";
-        exit;
-        }
-    }
+	while($r=$res->fetch_array()){
+	    if($r[0]>0){
+	        echo "<script>alert('请先删除此分类中的子类');history.back(-1)</script>";
+	        exit;
+	    }
+	    else{
+	        $r=$conn->query("delete from category where id=".$id."");
+	        if($r){
+	        echo "<script>alert('删除分类成功');history.back(-1)</script>";
+	        exit;
+	        }
+	    }
     }
 
 }
