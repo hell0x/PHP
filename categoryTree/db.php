@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 class db{
 	private static $_instance;
 	private static $_conn;
@@ -21,7 +21,7 @@ class db{
 			//实例化
 			self::$_conn = new mysqli('127.0.0.1', 'root', '', 'category');
 
-			mysql_query(self::$_conn, "set names UTF8");
+			mysqli_query(self::$_conn, "set names UTF8");
 		}
 
 		return self::$_conn;
