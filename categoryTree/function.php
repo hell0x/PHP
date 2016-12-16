@@ -11,12 +11,6 @@ switch ($action){
 	$id = $_GET['id'];
 	categoryDel($id);
 	break;
-	case 'edit':
-	$id = $_POST['id'];
-	$pid = $_POST['pid'];
-	$category = $_POST['category'];
-	categoryEdit($id, $pid, $category);
-	break;
 }
 
 //添加分类
@@ -51,16 +45,3 @@ while($r=$res->fetch_array()){
     }
 
 }
-
-function categoryEdit($id,$pid,$category){
-    $conn = db::getInstance()->connect();
-    $res = $conn-> query("update category set pid=".$pid.",category='".$category."' where id=".$id."");
-    if($res){
-        echo "<script>alert('修改分类成功');location.href='index.php';</script>";
-    }
-    else{
-        echo "<script>alert('修改分类失败');history.back(-1);</script>";
-        exit;
-    }
-}
-?>
