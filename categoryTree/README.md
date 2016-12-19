@@ -1,5 +1,5 @@
 # PHPSmallProject
-无限级分类实例
+无限级分类小实例
 
 1.单例模式连接数据库
 2.getCate函数
