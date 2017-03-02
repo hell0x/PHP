@@ -1,0 +1,31 @@
+数字	常量	说明
+1	E_ERROR	致命错误，脚本执行中断，就是脚本中有不可识别的东西出现 
+举例： Error：Invalid parameters. Invalid parameter name
+2	E_WARNING	部分代码出错，但不影响整体运行 
+举例： Warning: require_once(E:/include/config_base.php)
+4	E_PARSE 	字符、变量或结束的地方写规范有误
+举例：  Parse error: syntax error, unexpected $end in
+8 	 E_NOTICE	一般通知，如变量未定义等
+举例：  Notice: Undefined variable: p in E:\web\index.php on line 17
+16 	E_CORE_ERROR	PHP进程在启动时，发生了致命性错误 
+举例：  暂无
+32 	E_CORE_WARNING	在PHP启动时警告(非致命性错误)
+举例：  暂无
+64	E_COMPILE_ERROR	编译时致命性错误
+举例：  暂无
+128	E_COMPILE_WARNING	编译时警告级错误
+举例：  暂无
+256	E_USER_ERROR 	用户自定义的错误消息
+举例：  暂无
+512	E_USER_WARNING	用户自定义的警告消息
+举例：  暂无
+1024	E_USER_NOTICE 	用户自定义的提醒消息
+举例：  暂无
+2047	E_ALL	以上所有的报错信息，但不包括E_STRICT的报错信息
+举例：  暂无
+2048	E_STRICT	编码标准化警告，允许PHP建议如何修改代码以确保最佳的互操作性向前兼容性。
+
+error_reporting 变量的默认值是  E_ALL & ~E_NOTICE
+开发时，最佳的值为： E_ALL | E_STRICT
+如果设置为：error_reporting(E_ALL | E_STRICT)，则表示记录所有的错误信息
+可能会导致网站出现一大堆的错误代码；但是对于程序员来说应该说是一件好事，可以把代码优化到最优； 一些非致命性错误虽然不影响程序的运行，但是会加重PHP的负担.
