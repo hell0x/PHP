@@ -1,0 +1,17 @@
+安装Apache:
+	yum -y install httpd httpd-devel
+	启动服务: /etc/init.d/httpd start
+	设置开机启动: chkconfig httpd on
+安装Mysql:
+	yum -y install mysql mysql-server mysql-devel
+	启动服务: /etc/init.d/mysqld start
+	设置开机启动: chkconfig mysqld on
+	设置mysql密码: 
+	方法一: mysql -uroot -p;
+			use mysql;
+			update user set password = PASSWORD('×××') where user = 'root';
+			flush privileges;
+	方法二: mysql_secure_installation
+安装PHP:
+	yum -y install php php-mysql php-common php-gd php-mbstring php-mcrypt php-devel php-xml
+	重启Apache: /etc/init.d/httpd restart
