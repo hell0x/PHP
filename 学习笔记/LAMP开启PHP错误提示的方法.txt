@@ -1,0 +1,15 @@
+phpinfo()找到php.ini的位置
+chmod 777 php.ini
+vim php.ini
+	display_errors = off 改为on
+	error_reporting改为 E_ALL | E_STRICT
+修改Apache的httpd.conf
+	chomd 777 /etc/httpd/conf/httpd.conf
+	vim /etc/httpd/conf/httpd.conf
+	php_flag display_errors on
+	php_value error_reporting 2039  
+	(这里的2039表示E_ALL & ~E_NOTICE, 2047表示E_ALL)
+
+不具备php.ini修改权限，可在php文件加入：
+	ini_set('display_errors', 'on');
+	error_reporting('E_ALL | E_STRICT');
