@@ -9,3 +9,10 @@ session可存放在文件，数据库，内存中
 用户验证一般用session
 
 会话核心session id
+
+cookie不是很安全，别人可以分析本地的cookie并进行cookie欺骗，考虑到安全应该用session
+
+session会在一定时间内保存在服务器上。当访问增多，会影响服务器的性能，考虑性能的话，可以用cookie
+
+一般登录信息等重要信息用session存放
+其它信息，用cookie
