@@ -2,3 +2,5 @@ session.gc_maxlifetime		这个数据表示SessionID在服务器端储存的时�
 session.cookie_lifetime		这个表示sessionid在客户端cookie中存储的时间
 session.gc_probability/session.gc_divisor		两个数相除定义了每个会话初始化时启动gc(garbage collection 垃圾回收)进程的概率
 session_set_cookie_params()		设置session生存期，该函数必须在session_start()之前调用
+session.save_handler		修改所采用的会话管理器（默认为files）
+session.save_path			会话数据保存的位置
