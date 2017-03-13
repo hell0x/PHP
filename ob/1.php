@@ -5,7 +5,10 @@ for($i=0; $i<300; $i++)
 	print(" ");
 for($j = 0; $j<10; $j++){
 	echo $j."<br/>";
+	ob_flush();
 	flush();
 	sleep(1);
 }
+echo "Done";
+ob_end_flush();
 ?>
