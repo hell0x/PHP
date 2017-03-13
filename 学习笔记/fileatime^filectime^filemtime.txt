@@ -1,0 +1,8 @@
+1、fileatime()
+int fileatime(string filename)：fileatime()函数返回filename最后访问的时间，这里的最后访问是指每当一个文件的数据块被读取，采用UNIX时间戳格式，有错误时返回FALSE。
+
+2、filectime()
+int filectime(string filename)：filectime()函数返回filename最后改变的时间，这里的最后改变是指指定文件 filename 的 inode 最后改变时间，其中inode （索引节点）用来存放档案及目录的基本信息包含时间、档名、使用者及群组等，采用UNIX时间戳格式，有错误时返回FALSE。
+
+3、filemtime()
+int filemtime(string filename)：filemtime()函数返回filename最后修改的时间，最后修改指的是文件的内容改变，采用UNIX时间戳格式，有错误时返回FALSE。
