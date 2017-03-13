@@ -3,6 +3,7 @@ PHP基础知识
 	ob
 	$_SERVER
 	正则表达式
+	HTTP协议
 
 PHP框架基础
 
