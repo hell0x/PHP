@@ -1,0 +1,15 @@
+PHP基础知识
+	cookie和session
+	ob
+	$_SERVER
+	正则表达式
+
+PHP框架基础
+
+数据结构
+
+面试题目(知乎上的php面试题做一遍)
+
+面试会提到的问题
+
+github
