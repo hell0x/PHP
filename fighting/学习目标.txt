@@ -4,6 +4,7 @@ PHP基础知识
 	$_SERVER
 	正则表达式
 	HTTP协议
+	cli
 
 PHP框架基础
 
