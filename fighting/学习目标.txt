@@ -5,6 +5,8 @@ PHP基础知识
 	正则表达式
 	HTTP协议
 	cli
+	curl
+	fsocket
 
 PHP框架基础
 
