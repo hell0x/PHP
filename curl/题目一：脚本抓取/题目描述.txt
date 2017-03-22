@@ -1,0 +1,57 @@
+1.写一个php脚本,抓取页面http://php.net/manual/en/langref.php右侧的目录列表.运行此脚本期望得到如下输出:
+
+[2016-12-17 13:44:30] fetching http://php.net/manual/en/langref.php
+[2016-12-17 13:44:31] parsing start
+[2016-12-17 13:44:32] the right side list is:
+PHP Manual (http://php.net/manual/en/index.php)
+Copyright (http://php.net/manual/en/copyright.php)
+PHP Manual (http://php.net/manual/en/manual.php)
+Getting Started (http://php.net/manual/en/getting-started.php)
+Installation and Configuration (http://php.net/manual/en/install.php)
+Language Reference (http://php.net/manual/en/langref.php)
+Security (http://php.net/manual/en/security.php)
+Features (http://php.net/manual/en/Features)
+Function Reference (http://php.net/manual/en/funcref.php)
+PHP at the Core: A Hacker's Guide (http://php.net/manual/en/internals2.php)
+FAQ (http://php.net/manual/en/faq.php)
+Appendices (http://php.net/manual/en/appendices.php)
+[2016-12-17 13:44:33] parsing end
+[2016-12-17 13:44:34] saving to file langref.txt
+[2016-12-17 13:44:35] saved
+
+2.创建一个数据库php_manual,新建表index,这个表有3个字段: id, title, link.
+然后创建一个数据库用户php_manual_user,密码是php_manual_pass.
+把上述数据库导出成sql,把SQL语句贴到下面,使得我们在mysql命令行终端里执行这些sql语句可以完成上述操作.
+
+3.写一个php脚本,读取第1题的结果langref.txt并解析出title和link,插入第2题创建的数据库表index里.
+
+4.使用jQuery写一个function来解析langref.php右侧的目录列表,运行这个function返回如下一个object.
+{
+    "Copyright": "http://php.net/manual/en/copyright.php",
+    "PHP Manual": "http://php.net/manual/en/manual.php",
+    "Getting Started": "http://php.net/manual/en/getting-started.php",
+    "Installation and Configuration": "http://php.net/manual/en/install.php",
+    "Language Reference": "http://php.net/manual/en/langref.php",
+    "Security": "http://php.net/manual/en/security.php",
+    "Features": "http://php.net/manual/en/Features",
+    "Function Reference": "http://php.net/manual/en/funcref.php",
+    "PHP at the Core: A Hacker's Guide": "http://php.net/manual/en/internals2.php",
+    "FAQ": "http://php.net/manual/en/faq.php",
+    "Appendices": "http://php.net/manual/en/appendices.php"
+}
+
+5.写一条shell命令,执行此命令可获取到http://php.net/manual/en/langref.php的内容并将页面里的所有大写的PHP转成小写,最后将结果保存到/tmp/langref.html里.
+
+6.(加分题) 改写下边的脚本,使得当接收到SIGINT信号时打印出"caught signal SIGINT, exit"并退出.
+<?php
+while (1) {
+    echo "\n\n";
+    echo "I am doing something important\n";
+    echo "if i am interruptted, the data will be corrupted\n";
+    echo "be careful\n";
+    echo "\n\n";
+    sleep(3);
+}
+
+(加分题) 有一个超级大的int数组要求和,假设有1000W,写一个php脚本,根据当前机器(假设是多核的)cpu的核数,fork出这么多子进程,把数组平分,每个子进程计算其中一部分,并把结果保存到/tmp/子进程pid.txt.
+最后父进程汇总并输出求各结果.
