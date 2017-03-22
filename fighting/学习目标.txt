@@ -8,6 +8,9 @@ PHP基础知识
 	curl
 	fsocket
 
+mysql
+	创建表时索引的应用
+
 PHP框架基础
 
 数据结构
