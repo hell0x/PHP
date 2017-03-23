@@ -1,0 +1,9 @@
+登录mysql:
+mysql -uroot -p
+
+创建用户
+insert into mysql.user(Host, User, Password) Values("%", "wei", password("xing"));
+
+为用户授权
+	授权格式: grant 权限 on 数据库.* to 用户名@登录主机 identified by "密码";
+	flush privileges;   //刷新系统权限表
