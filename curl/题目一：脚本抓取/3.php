@@ -19,4 +19,5 @@ if($fp = fopen($file, "r")){
 }else{
 	exit("读取文件langref.txt失败");
 }
+
 ?>
