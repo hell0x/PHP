@@ -1,0 +1,28 @@
+SQL注入：所谓sql注入攻击，就是攻击者把sql命令插入到Web表单的输入域或页面请求的查询字符串字符串，欺骗服务器执行恶意的sql命令。
+
+在某些表单中，用户输入的内容直接用来构造（或者影响）动态SQL命令，或作为存储过程的输入参数，这类表单特别容易受到SQL注入式攻击。
+
+防止Sql注入：
+1.做参数合法性
+	a)int类型通过intval转换
+	b)参数是字符串的话，首先通过sprintf函数格式化输出，确保它是一个字符串。然后通过安全函数去点一些不合法的字符，比如: addslashes(sprintf("%s", $str));
+	c)还可以进一步去判断字符串的长度，去防止缓冲区溢出攻击
+		$str = addslashes(sprintf("%s", $str));
+		$str = substr($str, 0, 40);
+2.参数绑定
+服务器方面:
+	magic_quotes_gpc设置为on
+	display_errors 设置为off
+编码方面:
+	$keywords = addslashes($keywords);
+　　$keywords = str_replace("_","\_",$keywords);
+　　$keywords = str_replace("%","\%",$keywords);
+
+下面代码用于防止注入:
+if(get_magic_quotes_gpc()){
+	//...
+}else{
+	$str = mysql_real_escape_string($str);
+	$keywords = str_replace("_", "\_", $keywords);
+	$keywords = str_replace("%","\%",$keywords);
+}
