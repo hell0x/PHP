@@ -1,0 +1,6 @@
+PHP数据类型转换有三种方式:
+	在要转换的变量前加上用括号括起来的目标类型，如(int)$str
+	使用转换函数intval(),floatval(),strval()
+	使用类型转换函数settype()
+
+判断数据类型使用gettype()函数
