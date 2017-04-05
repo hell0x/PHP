@@ -1,5 +1,5 @@
 PHP基础知识
-	cookie和session(会话控制，主要说原理。session与cookie在分布式应用中出现问题的解决方案)
+	cookie和session(会话控制原理。session与cookie在分布式应用中出现问题的解决方案)
 	ob
 	$_SERVER
 	正则表达式(邮箱，网址，标签匹配，正则函数)
