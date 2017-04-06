@@ -1,0 +1,11 @@
+PHP cli模式开发不需要任何一种web服务器（包括Apache和IIS等）
+
+运行方式:
+①. php -f /path/to/yourfile.php(调用php处理解释器)
+②. 赋给php文件可执行权限，然后脚本头部加上声明(#! /usr/bin/php),然后直接执行
+
+读取参数方式:
+$_SERVER['argc'] 或$argc	取得输入参数的个数
+$_SERVER['argv'] 或$argv	取得输入参数的值
+
+需要注意的是CLI模式和CGI模式运行时用的php.ini并非同一套配置，要单独配置。
