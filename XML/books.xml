@@ -1,0 +1,12 @@
+<books>
+<book>
+<author>Jack Herrington</author>
+<title>PHP Hacks</title>
+<publisher>O'Reilly</publisher>
+</book>
+<book>
+<author>Jack Herrington</author>
+<title>Podcasting Hacks</title>
+<publisher>O'Reilly</publisher>
+</book>
+</books>
