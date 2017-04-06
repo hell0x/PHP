@@ -1,0 +1,6 @@
+PHP常见五大运行模式：
+1) CGI(通用网管借口/Common Gateway Interface)
+2) FastCGI(常驻型CGI/Long-Live CGI)
+3) CLI(命令行运行/Command Line Interface)
+4) Web模块模式(Apache等web服务器运行的模式)
+5) ISAPI（Internet Server Application Program Interface）
