@@ -1,0 +1,2 @@
+try-catch用于捕获异常，无法捕获错误
+try-catch无法在类的自动加载函数__autoload()内生效
