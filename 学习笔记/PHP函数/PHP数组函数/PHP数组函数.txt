@@ -1,0 +1,60 @@
+一、数组遍历函数
+1 list();  //不是真正的函数，而是PHP的语言结构，用于给一组变量赋值，仅能用于索引数组
+2 each();  //返回数组当前元素的键值对，并将指针移动到下一个元素位置
+3 while(); //可配合list或each使用：while(list($key, $value) = each($arr)){each $key, $value; }
+
+二、数组内部指针控制
+1 current();  //读取指针位置的内容
+2 key();      //读取当前指针指向内容的索引值
+3 next();     //将数组中的内部指针指向下一单元
+4 prev();     //将数组内部指针倒回一位
+5 end();      //将数组内部指针指向最后一个元素
+6 reset();    //将目前指针指向第一个索引位置
+
+三、数组键值操作函数
+1 array_values($arr);       //获得数组的值
+2 array_keys($arr);         //获得数组的键名
+3 array_flip($arr);         //数组中的值与键名互换（如果有重复前面的会被后面的覆盖）
+4 array_search('PHP',$arr); //检索给定的值，加true则是严格类型检查
+5 array_reverse($arr);      //将数组中的元素翻转(前后顺序)
+6 in_array("apple", $arr);  //在数组中检索apple
+7 array_key_exists("apple", $arr); // 检索给定的键名是否存在数组中
+8 array_count_values($arr);        // 统计数组中所有值出现的次数
+9 array_unique($arr);              // 删除数组中重复的值
+
+四、数组回调函数
+1 array_filter(); //使用回调函数过滤数组中的元素，如果回调返回true则当前的元素被包含到返回数组中
+2 array_walk();   //回调函数处理数组，自定义函数要有两个参数，本函数第三个参数可以作为回调第三个参数返回
+3 array_map();    //可以处理多个数组，每个数组的长度应该相同，传入数组的个数和回调函数参数个数应该一致
+
+五、数组的分段和填充
+1 array_slice($arr, 0, 3);    //将数组中的一段取出，此函数忽略键名（数组的分段）
+2 array_splice($arr, 0, 3，array("black","maroon"));    //将数组中的一段取出，返回的序列从原数组中删除
+3 array_chunk($arr, 3, TRUE);   //将一个数组分割成多个，TRUE为保留原数组的键名（分割多个数组）
+
+六、数组与栈，列队
+1 array_push($arr, "apple", "pear");    //将一个或多个元素压入数组栈的末尾（入栈），返回入栈元素的个数
+2 array_pop($arr);    // 将数组栈的最后一个元素弹出（出栈）
+3 array_shift($arr);   //数组中第一个元素移出并返回（长度减1，其他元素向前移动一位，数字键名改为从零计数，文字键名不变）
+4 array_unshift($arr,"a",array(1,2));  //在数组的开头插入一个或多个元素
+
+七、数组的排序
+1 sort($arr);      //由小到大，忽略键名
+2 rsort($arr);     //由大到小，忽略键名
+
+3 asort($arr);     //由小到大，保留键名
+4 arsort($arr);    //由大到小，保留键名
+
+5 ksort($arr);     //按照键名正序排序
+6 krsort($arr);    //按照键名逆序排序
+
+八、数组的计算
+1 array_sum($arr);   //对数组内部的所有元素做求和运算（数组元素的求和）
+2 array_merge($arr1, $arr2); //合并两个或多个（相同字符串键名，后面覆盖前面，相同的数字键名，后面的附加到后面）
+3  
+4 array_diff($arr1, $arr2);           //返回差集结果数组   array_diff_assoc($arr1, $arr2, $arr3);  //返回差集结果数组，键名也做比较
+5 array_intersect($arr1, $arr2);  //返回交集结果数组    array_intersect_assoc($arr1, $arr2);   //返回交集结果数组，键名也做比较 
+
+九、其他的数组函数
+1 array_unique($arr);   //移除数组中重复的值，新的数组中会保留原始的键名
+2 shuffle($arr);             // 将数组的顺序打乱
