@@ -28,3 +28,22 @@ alter table tablename add passtest int(4) default '0';
 
 更改表名:
 rename table 原表名 to 新表名;
+
+创建索引
+a)Alter
+ALTER TABLE table_name ADD INDEX index_name (column_list)
+ALTER TABLE table_name ADD UNIQUE (column_list)
+ALTER TABLE table_name ADD PRIMARY KEY (column_list)
+b)Create
+CREATE INDEX index_name ON table_name (column_list)
+CREATE UNIQUE INDEX index_name ON table_name (column_list)
+不能用CREATE INDEX语句创建PRIMARY KEY索引
+
+删除索引
+DROP INDEX index_name ON talbe_name
+ALTER TABLE table_name DROP INDEX index_name
+ALTER TABLE table_name DROP PRIMARY KEY
+
+查看索引
+show index from tbname;
+show keys from tbname;
