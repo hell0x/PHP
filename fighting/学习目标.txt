@@ -20,6 +20,11 @@ PHP基础知识
 	url的处理函数，得到url指定的部分									(有待补充)
 
 mysql
+	mysql基础
+	mysql索引基础
+	mysql优化
+	mysql处理大数据
+	mysql常见面试题
 	创建表时索引的应用
 
 PHP框架基础
