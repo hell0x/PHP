@@ -7,3 +7,24 @@ insert into mysql.user(Host, User, Password) Values("%", "wei", password("xing")
 为用户授权
 	授权格式: grant 权限 on 数据库.* to 用户名@登录主机 identified by "密码";
 	flush privileges;   //刷新系统权限表
+
+导出数据库:
+mysqldump -uroot -p --default-character-set=latin1 数据库名 > *.sql
+导出数据库的数据表:
+mysqldump -uroot -p 数据库 数据表 > *.sql
+导出数据库结构:
+mysqldump -uroot -p -d --add-drop-table 数据库名 > *.sql
+
+导入数据库:
+a) 进入数据库控制台  然后用source命令
+b) mysqldump -u username -p dbname < *.sql
+c) mysql -u username -p -D dbname < *.sql
+
+查看当前使用的数据库:
+select database();
+
+表中增加字段:
+alter table tablename add passtest int(4) default '0';
+
+更改表名:
+rename table 原表名 to 新表名;
