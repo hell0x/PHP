@@ -29,6 +29,9 @@ alter table tablename add passtest int(4) default '0';
 更改表名:
 rename table 原表名 to 新表名;
 
+查看数据库编码:
+show variables like 'character%';
+
 创建索引
 a)Alter
 ALTER TABLE table_name ADD INDEX index_name (column_list)
