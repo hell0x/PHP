@@ -18,3 +18,15 @@ EXPLAIN SELECT * FROM employees.titles
 WHERE emp_no='10001'
 AND title IN ('Senior Engineer', 'Staff', 'Engineer', 'Senior Staff', 'Assistant Engineer', 'Technique Leader', 'Manager')
 AND from_date='1986-06-26';
+
+情况四：查询条件没有指定索引第一列。
+由于不是最左前缀，索引这样的查询显然用不到索引。
+
+情况五：匹配某列的前缀字符串。
+如果通配符%不出现在开头，则可以用到索引，但根据具体情况不同可能只会用其中一个前缀
+
+情况六：范围查询。
+范围列可以用到索引（必须是最左前缀），但是范围列后面的列无法用到索引。同时，索引最多用于一个范围列，因此如果查询条件中有两个范围列则无法全用到索引。
+
+情况七：查询条件中含有函数或表达式。
+如果查询条件中含有函数或表达式，则MySQL不会为这列使用索引
