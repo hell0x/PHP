@@ -1,0 +1,16 @@
+SQL语句优化-show参数        
+
+MySQL客户端连接成功后，通过使用show [session|global] status 命令可以提供服务器状态信息。其中的session来表示当前的连接的统计结果，global来表示自数据库上次启动至今的统计结果。默认是session级别的。
+下面的例子：
+show status like 'Com_%';
+其中Com_XXX表示XXX语句所执行的次数。
+重点注意：Com_select,Com_insert,Com_update,Com_delete通过这几个参数，可以容易地了解到当前数据库的应用是以插入更新为主还是以查询操作为主，以及各类的SQL大致的执行比例是多少。
+
+还有几个常用的参数便于用户了解数据库的基本情况。
+Connections：试图连接MySQL服务器的次数
+Uptime：服务器工作的时间（单位秒）
+Slow_queries：慢查询的次数 (默认是慢查询时间10s)
+
+show status like 'Connections'
+show status like 'Uptime'
+show status like 'Slow_queries'
