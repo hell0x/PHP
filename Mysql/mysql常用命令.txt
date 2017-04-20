@@ -50,3 +50,6 @@ ALTER TABLE table_name DROP PRIMARY KEY
 查看索引
 show index from tbname;
 show keys from tbname;
+
+now()	取得当前时间
+date()	函数返回日期或日期/时间表达式的日期部分。
