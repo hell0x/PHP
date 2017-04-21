@@ -1,0 +1,14 @@
+top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。
+
+ps: 查看系统当前进程
+
+df命令的功能是用来检查linux服务器的文件系统的磁盘空间占用情况
+
+wc: 统计指定文件中的字节数、字数、行数，并将统计结果显示输出
+
+Netstat 命令用于显示各种网络相关信息
+列出所有端口 netstat -a
+列出所有 tcp 端口 netstat -at
+列出所有 udp 端口 netstat -au
+只显示监听端口 netstat -l
+查看80端口的情况  netstat -anp | grep :80
