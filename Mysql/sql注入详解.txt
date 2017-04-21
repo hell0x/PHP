@@ -4,19 +4,19 @@ SQL注入：所谓sql注入攻击，就是攻击者把sql命令插入到Web表�
 
 防止Sql注入：
 1.做参数合法性
-	a)int类型通过intval转换
-	b)参数是字符串的话，首先通过sprintf函数格式化输出，确保它是一个字符串。然后通过安全函数去点一些不合法的字符，比如: addslashes(sprintf("%s", $str));
-	c)还可以进一步去判断字符串的长度，去防止缓冲区溢出攻击
-		$str = addslashes(sprintf("%s", $str));
-		$str = substr($str, 0, 40);
+	a)只要是有固定格式的变量，在SQL语句执行前，应该严格按照固定格式去检查，确保变量是我们预想的格式。如果你的SQL语句是类似where id={$id}这种形式，数据库里所有的id都是数字，那么就应该在SQL被执行前，检查确保变量id是int类型；如果是接受邮箱，那就应该检查并严格确保变量一定是邮箱的格式，其他的类型比如日期、时间等也是一个道理。
+	b)过滤特殊符号
+	对于无法确定固定格式的变量，一定要进行特殊符号过滤或转义处理。以PHP为例，通常是采用addslashes函数，它会在指定的预定义字符前添加反斜杠转义，这些预定义的字符是：单引号 (') 双引号 (") 反斜杠 (\) NULL。
 2.参数绑定
+3、绑定变量，使用预编译语句
+绑定参数使用预处理语句是预防SQL注入的最佳方式
+4、做好数据库帐号权限管理。
+5、严格加密处理用户的机密信息。
 服务器方面:
 	magic_quotes_gpc设置为on
-	display_errors 设置为off
-编码方面:
-	$keywords = addslashes($keywords);
-　　$keywords = str_replace("_","\_",$keywords);
-　　$keywords = str_replace("%","\%",$keywords);
+	display_errors 设置为off(关闭错误信息提示)
+	打开php安全模式safe_mode = on
+
 
 下面代码用于防止注入:
 if(get_magic_quotes_gpc()){
