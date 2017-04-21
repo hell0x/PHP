@@ -53,3 +53,5 @@ show keys from tbname;
 
 now()	取得当前时间
 date()	函数返回日期或日期/时间表达式的日期部分。
+
+show engines;	查看数据库可以支持的存储引擎
