@@ -12,3 +12,9 @@ Netstat 命令用于显示各种网络相关信息
 列出所有 udp 端口 netstat -au
 只显示监听端口 netstat -l
 查看80端口的情况  netstat -anp | grep :80
+
+vim /var/log/nginx/error.log	查看nginx错误日志
+/etc/init.d/php-fpm restart		重启php-fpm
+php-mbstring 
+
+cookies可以从谷歌浏览器里面network里面看，也可以Application里面看
