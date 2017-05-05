@@ -57,3 +57,8 @@ MySQL的最大连接数，增加该值增加mysqld 要求的文件描述符的�
 	读写分离
 
 	如果数据库压力很大，一台机器支撑不了，那么可以用mysql复制实现多台机器同步，将数据	库的压力分散。　　
+
+如果查询包括GROUP BY 但用户想要避免排序结果的消耗，则可以指定ORDER By NULL禁止排序，例如：
+explain select id, sum(moneys) from sales2 group by id \G
+explain select id, sum(moneys) from sales2 group by id order by null \G
+你可以通过比较发现第一条语句会比第二句在Extra:里面多了Using filesort.而恰恰filesort是最耗时的。
