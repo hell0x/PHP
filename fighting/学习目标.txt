@@ -71,3 +71,5 @@ github
 	各招聘网站版
 
 问题
+
+PHP-fpm那个配置参数可以控制超时kill掉，redis中list末位增加元素等。 回答上的：GC原理，PHP弱类型实现原理，大数据分页，微博互粉原理，现场写单例模式，现场写了5个函数 有争议的问题:SQL找最大主键ID，我说是LAST_INSERT_ID()，面试官说order by limit 1
