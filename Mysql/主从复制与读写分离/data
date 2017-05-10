@@ -1,0 +1,30 @@
+主从复制（Master-Slave）同步数据
+读写分离（MySQL-Proxy）来提升数据库的并发负载能力
+主从复制配置:
+	主服务器:
+		1)授权给从数据库服务器
+		2)show master status;记录下 FILE 及 Position 的值
+	从服务器:
+		执行同步SQL语句
+		mysql> change master to
+		master_host=’192.168.10.130’,
+		master_user=’rep1’,
+		master_password=’password’,
+		master_log_file=’mysql-bin.000005’,
+		master_log_pos=261;
+		启动Slave同步进程
+		mysql> start slave;
+		主从同步检查
+		mysql> show slave status\G
+		Slave_IO_Running 与 Slave_SQL_Running 的值都必须为YES，才表明状态正常。
+读写分离:
+	编译安装lua
+	MySQL-Proxy的读写分离主要是通过rw-splitting.lua脚本实现的，因此需要安装lua。
+	安装配置MySQL-Proxy
+	写mysql-proxy服务管理脚本
+	配置并使用rw-splitting.lua读写分离脚本
+
+读写分离的好处:
+	1)增加冗余
+	2.增加了机器的处理能力
+	3)对于读操作为主的应用，使用读写分离是最好的场景，因为可以确保写的服务器压力更小，而读又可以接受点时间上的延迟。
