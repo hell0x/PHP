@@ -1,1 +1,0 @@
-CGI：通用网关借口(Common Gateway Interface)
