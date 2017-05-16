@@ -46,4 +46,12 @@ $mateches = array();
 if(preg_match($regex, $str, $matches)){
 	var_dump($matches);
 }
+
+//html标记
+$regex = '/<([\w]+)>.*<\/\1>|<([\w]+)\/>/';
+$str = "sdf<br/>";
+$matches = array();
+if(preg_match($regex, $str, $matches)){
+	var_dump($matches);
+}
 ?>
