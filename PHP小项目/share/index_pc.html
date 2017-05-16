@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>pc端分享和回到顶部功能实现</title>
+</head>
+<body style="height:2000px;">
+<!-- 回到顶部和分享功能start -->
+<style>
+#elevator_item {
+	width: 60px;
+	height: 100px;
+	position: fixed;
+	right: 30px;
+	bottom: 20px;
+	-webkit-transition: opacity .4s ease-in-out;
+	-moz-transition: opacity .4s ease-in-out;
+	-o-transition: opacity .4s ease-in-out;
+	opacity: 1;
+	z-index: 100020;
+	display: none;
+}
+#elevator_item.off {
+	opacity: 0;
+	visibility: hidden
+}
+#elevator {
+	display: block;
+	width: 60px;
+	height: 50px;
+	background: url(icon_top.png) center center no-repeat;
+	background-color: #444;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.2);
+	cursor: pointer;
+	margin-bottom: 10px
+}
+#elevator:hover {
+	background-color: rgba(0,0,0,.7)
+}
+#elevator:active {
+	background-color: rgba(0,0,0,.75)
+}
+
+</style>
+<div id="elevator_item">
+    <a id="elevator" onclick="return false;" title="回到顶部"></a>
+</div>
+<style>
+#share_item {
+	width: 64px;
+	height: 150px;
+	position: fixed;
+	left: 5%;
+	top: 20%;
+	opacity: 1;
+	z-index: 100020;
+        text-align: center;
+        display:none;
+}
+.share-hr {
+    background: #e8e8e8;
+    height: 1px;
+    margin-top: 6px;
+}
+.share-box {
+    margin-top: 14px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.share-box img {
+	width:40px;
+	vertical-align:middle;
+}
+.share-box img:hover {
+	opacity: .6;
+}
+.share-box span {
+	vertical-align: middle;
+    padding-left: 8px;
+    font-size: 16px;
+    vertical-align:middle;
+}
+</style>
+<div id="share_item">
+        <div style="font-size:16px;">分享至</div>
+	<div class="share-hr"></div>
+	<div class="share-box">
+		<img src="weibo.png" class="icon-weibo" alt="微博"/>
+	</div>
+	<div class="share-box">
+		<img src="Qzone.png" class="icon-Qzone" alt="Qzone"/>
+	</div>
+	<div class="share-box">
+		<img src="weixin.png" class="icon-weixin" alt="微信"/>
+	</div>
+</div>
+<script src="jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function() {
+	$(window).scroll(function(){
+		var scrolltop=$(this).scrollTop();		
+		if(scrolltop>=300){		
+			$("#elevator_item").show();
+            $("#share_item").show();
+		}else{
+			$("#elevator_item").hide();
+            $("#share_item").hide();
+		}
+	});		
+	$("#elevator").click(function(){
+		$("html,body").animate({scrollTop: 0}, 100);	
+	});		
+});
+</script>
+<script type="text/javascript">
+$(function() {
+	var url = window.location.href;
+	var title = document.title;
+	$(".icon-weibo").click(function(){
+		window.location.href = "http://www.jiathis.com/send/?webid=tsina&url="+url+"&title="+title;
+	});		
+	$(".icon-Qzone").click(function(){
+		window.location.href = "http://www.jiathis.com/send/?webid=qzone&url="+url+"&title="+title;
+	});
+	$(".icon-weixin").click(function(){
+		window.location.href = "http://www.jiathis.com/send/?webid=weixin&url="+url+"&title="+title;
+	});
+});
+</script>
+<!-- 回到顶部和分享功能end -->
+</body>
+</html>
