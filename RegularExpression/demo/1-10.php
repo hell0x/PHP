@@ -32,7 +32,7 @@ if(preg_match($regex, $str, $matches)){
 }
 
 //url
-$regex = '#^[a-zA-z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\S*)?$#';
+$regex = '#^[a-zA-Z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))+(\?\S*)?$#';
 $str = 'http://www.baidu.com';
 $mateches = array();
 if(preg_match($regex, $str, $matches)){
