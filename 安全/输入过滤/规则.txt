@@ -18,3 +18,4 @@
 	$_SERVER['HTTP_REFERER']
 	要创建随机的令牌，可以使用 PHP 内置的 md5()、uniqid() 和 rand() 函数
 	csrf攻击(跨站点请求伪造)
+4.令牌验证避免数据的重复提交
