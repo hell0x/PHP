@@ -1,0 +1,16 @@
+HttpOnly
+服务器端在设置安全级别高的Cookie时，带上HttpOnly的属性，就能防止JavaScript获取。
+
+strip_tags	
+从字符串中去除 HTML 和 PHP 标记
+
+htmlentities
+将字符转换为 HTML 转义字符
+
+htmlspecialchars
+将特殊字符转换为 HTML 实体
+&		&amp;
+"		&quot;
+'		设置了 ENT_QUOTES 后， &#039; (如果是 ENT_HTML401) ，或者 &apos; (如果是 ENT_XML1、 ENT_XHTML 或 ENT_HTML5)。
+<		&lt;
+>		&lg;
