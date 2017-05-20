@@ -1,0 +1,17 @@
+CSRF 即：跨站点请求伪造
+
+csrf 防范:
+验证码
+
+Referer Check
+
+Referer Check即来源检测。
+HTTP Referer 是 Request Headers 的一部分，当浏览器向web服务器发出请求的时候，一般会带上Referer，告诉服务器用户从哪个站点链接过来的。
+服务器通过判断请求头中的referer，也能避免CSRF的攻击。
+
+Token
+CSRF能攻击成功，根本原因是：操作所带的参数均被攻击者猜测到。
+当向服务器传参数时，带上Token。这个Token是一个随机值，并且由服务器和用户同时持有。
+Token可以存放在用户浏览器的Cookie中，
+当用户提交表单时带上Token值，服务器就能验证表单和Cookie中的Token是否一致。
+（前提，网站没有XSS漏洞，攻击者不能通过脚本获取用户的Cookie）

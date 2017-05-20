@@ -1,0 +1,6 @@
+防止mysql注入：
+转义函数addslashes(), mysql_real_escape_string()等
+正则验证
+is_numeric(),intval()对数字进行过滤
+str_replace()对特定字符过滤
+绑定变量，使用预编译语句
