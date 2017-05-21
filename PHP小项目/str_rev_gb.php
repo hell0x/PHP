@@ -21,4 +21,5 @@ function utf8_strrev($str){
 $str = "hello魏星world";
 echo utf8_strrev($str);
 // echo str_rev_gb($str, 'UTF-8');
+
 ?>
