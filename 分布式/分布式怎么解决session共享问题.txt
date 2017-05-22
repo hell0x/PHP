@@ -1,3 +1,4 @@
 1)cookie里面存session
+	session数据放到客户端那边造成的安全问题，这样会造成带宽消耗，而且会强烈影响性能，而且cookie自身也有长度限制。
 2)数据库里面存session
 3)memcache和redis存储
