@@ -32,4 +32,6 @@ var_dump($redis -> lRange('favorite_fruit',0,-1));
 var_dump($redis -> blPop('fake_key',2));    // 阻塞链接， 2s 之后超时结束，返回 array (size=0) empty
 
 //brPop 移出并获取列表的最后一个元素， 如果列表没有元素会阻塞列表直到等待超时或发现可弹出元素为止
+
+//lLen 用于返回列表的长度
 ?>
