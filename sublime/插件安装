@@ -1,0 +1,41 @@
+安装Sublime text 3插件很方便，可以直接下载安装包解压缩到Packages目录（菜单->preferences->　　Browse Packages）
+
+Package control在线安装：
+按Ctrl+`调出console（注：避免热键冲突）
+粘贴以下代码到命令行并回车：
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+如果在Perferences->package settings中看到package control这一项，则安装成功。
+
+
+1. Emmet（原名 Zen Coding）
+一种快速编写html/css的方法
+
+2. html5
+支持hmtl5规范的插件包
+注意：与Emmet插件配合使用，效果更好
+使用方法：新建html文档>输入html5>敲击Tab键>自动补全html5规范文档
+
+3. JSFormat
+JS代码格式化插件。
+使用方法：使用快捷键ctrl+alt+f
+
+4. SublimeLinter
+一个支持lint语法的插件，可以高亮linter认为有错误的代码行，也支持高亮一些特别的注释，比如“TODO”，这样就可以被快速定位。
+
+5. BracketHighlighter
+类似于代码匹配，可以匹配括号，引号等符号内的范围。
+
+6. Alignment
+代码对齐，如写几个变量，选中这几行，Ctrl+Alt+A
+
+7. Ctags
+
+函数跳转，我的电脑上是Alt+点击 函数名称，会跳转到相应的函数
+
+8. Doc​Blockr
+注释插件，生成幽美的注释。标准的注释，包括函数名、参数、返回值等，并以多行显示，省去手动编写。
+使用方法(参考链接内容)：http://www.cnblogs.com/huangtailang/p/4499988.html
+
+9. SideBarEnhancements
+侧栏右键功能增强，非常实用
+使用方法(参考链接内容)：http://www.w3cfuns.com/notes/13810/d9b9ed2fb80785dae88a5344ef0f30d4.html
