@@ -20,3 +20,24 @@ Ctrl + G 然后输入行号以跳转到指定行：
 
 编辑代码时我们经常会开多个窗口，所以分屏很重要。 Alt + Shift + 2 进行左右分屏， Alt + Shift + 8 进行上下分屏， Alt + Shift + 5 进行上下左右分屏（即分为四屏）。
 
+跳转（Jumping）
+Ctrl + P：跳转到指定文件，输入文件名后可以：
+@ 符号跳转：输入 @symbol 跳转到 symbol 符号所在的位置
+# 关键字跳转：输入 #keyword 跳转到 keyword 所在的位置
+: 行号跳转：输入 :12 跳转到文件的第12行。
+Ctrl + R：跳转到指定符号
+Ctrl + G：跳转到指定行号
+
+窗口（Window）
+Ctrl + Shift + N：创建一个新窗口
+Ctrl + N：在当前窗口创建一个新标签
+Ctrl + W：关闭当前标签，当窗口内没有标签时会关闭该窗口
+Ctrl + Shift + T：恢复刚刚关闭的标签
+
+屏幕（Screen）
+F11：切换普通全屏
+Shift + F11：切换无干扰全屏
+Alt + Shift + 2：进行左右分屏
+Alt + Shift + 8：进行上下分屏
+Alt + Shift + 5：进行上下左右分屏
+分屏之后，使用 Ctrl + 数字键 跳转到指定屏，使用 Ctrl + Shift + 数字键 将当前屏移动到指定屏
